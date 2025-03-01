@@ -7,7 +7,10 @@ public class StringBuilderDigitExtractor implements DigitExtractor {
 	@Override
 	public List<Integer> getDigits(int number) {
 		var string = new StringBuilder().append(number).reverse();
-		return string.chars().mapToObj(Character::getNumericValue).toList();
+		
+		return string.chars()
+				.mapToObj(Character::getNumericValue)
+				.toList();
 	}
 
 }

@@ -18,7 +18,9 @@ public class CreditCardTypeChecker {
 
 	public CreditCardTypeEnum getCreditCardType(int score) {
 		validateScore(score);
-		return isSilver(score) ? CreditCardTypeEnum.SILVER : getAboveSilver(score);
+		return isSilver(score) 
+				? CreditCardTypeEnum.SILVER 
+				: getAboveSilver(score);
 	}
 
 	private static void validateScore(int score) {
@@ -32,7 +34,9 @@ public class CreditCardTypeChecker {
 	}
 
 	private static CreditCardTypeEnum getAboveSilver(int score) {
-		return isGold(score) ? CreditCardTypeEnum.GOLD : CreditCardTypeEnum.PLATINUM;
+		return isGold(score) 
+				? CreditCardTypeEnum.GOLD 
+				: CreditCardTypeEnum.PLATINUM;
 	}
 
 	private static boolean isGold(int score) {

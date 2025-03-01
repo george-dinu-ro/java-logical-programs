@@ -10,7 +10,10 @@ public class EvenAndOddChecker {
 
 	public EvenOddEnum check(int number) {
 		validateNumber(number);
-		return (number % 2 == 0) ? EvenOddEnum.EVEN : EvenOddEnum.ODD;
+		
+		return (number % 2 == 0) 
+				? EvenOddEnum.EVEN 
+				: EvenOddEnum.ODD;
 	}
 
 	private static void validateNumber(int number) {

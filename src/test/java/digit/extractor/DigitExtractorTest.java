@@ -14,7 +14,8 @@ class DigitExtractorTest {
 	@ParameterizedTest
 	@MethodSource("provideNumbers")
 	void givenNumber_thenExtractDigits(DigitExtractor digitExtractor, int number, List<Integer> digits) {
-		assertThat(digitExtractor.getDigits(number)).isEqualTo(digits);
+		assertThat(digitExtractor.getDigits(number))
+			.isEqualTo(digits);
 	}
 
 	private static Stream<Arguments> provideNumbers() {

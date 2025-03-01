@@ -21,21 +21,26 @@ class EvenAndOddCheckerTest {
 	@ParameterizedTest
 	@ValueSource(ints = { -10, 0 })
 	void givenInvalidNumber_whenCheck_thenThrowIllegalArgumentException(int number) {
-		var exception = assertThrows(IllegalArgumentException.class, () -> evenAndOddChecker.check(number));
+		var exception = assertThrows(
+				IllegalArgumentException.class, 
+				() -> evenAndOddChecker.check(number));
 
-		assertThat(exception.getMessage()).isEqualTo(EvenAndOddChecker.NUMBER_MUST_BE_GREATER_THAN_0);
+		assertThat(exception.getMessage())
+			.isEqualTo(EvenAndOddChecker.NUMBER_MUST_BE_GREATER_THAN_0);
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = { 2, 10 })
 	void givenEvenNumber_whenCheck_thenReturnEven(int number) {
-		assertThat(evenAndOddChecker.check(number)).isEqualTo(EvenOddEnum.EVEN);
+		assertThat(evenAndOddChecker.check(number))
+			.isEqualTo(EvenOddEnum.EVEN);
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = { 1, 11 })
 	void givenOddNumber_whenCheck_thenReturnOdd(int number) {
-		assertThat(evenAndOddChecker.check(number)).isEqualTo(EvenOddEnum.ODD);
+		assertThat(evenAndOddChecker.check(number))
+			.isEqualTo(EvenOddEnum.ODD);
 	}
 
 }

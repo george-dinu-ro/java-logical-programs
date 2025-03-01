@@ -12,8 +12,9 @@ class DigitAdderTest {
 
 	@ParameterizedTest
 	@MethodSource("provideNumbers")
-	void givenNumber_thenExtractDigits(DigitAdder digitAdder, int number, int digitsSum) {
-		assertThat(digitAdder.getDigitsSum(number)).isEqualTo(digitsSum);
+	void givenNumber_thenAddDigits(DigitAdder digitAdder, int number, int digitsSum) {
+		assertThat(digitAdder.getDigitsSum(number))
+			.isEqualTo(digitsSum);
 	}
 
 	private static Stream<Arguments> provideNumbers() {

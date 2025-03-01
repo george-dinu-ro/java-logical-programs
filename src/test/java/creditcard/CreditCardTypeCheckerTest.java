@@ -21,28 +21,33 @@ class CreditCardTypeCheckerTest {
 	@ParameterizedTest
 	@ValueSource(ints = { 0, 399, 1001 })
 	void givenInvalidCreditScore_whenGetCreditCardType_thenThrowIllegalArgumentException(int score) {
-		var exception = assertThrows(IllegalArgumentException.class,
+		var exception = assertThrows(
+				IllegalArgumentException.class,
 				() -> creditCardTypeChecker.getCreditCardType(score));
 
-		assertThat(exception.getMessage()).isEqualTo(CreditCardTypeChecker.INVALID_CREDIT_SCORE);
+		assertThat(exception.getMessage())
+			.isEqualTo(CreditCardTypeChecker.INVALID_CREDIT_SCORE);
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = { CreditCardTypeChecker.SILVER_THRESHOLD, 401, 599 })
 	void givenSilverScore_whenGetCreditCardType_thenReturnSilverType(int score) {
-		assertThat(creditCardTypeChecker.getCreditCardType(score)).isEqualTo(CreditCardTypeEnum.SILVER);
+		assertThat(creditCardTypeChecker.getCreditCardType(score))
+			.isEqualTo(CreditCardTypeEnum.SILVER);
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = { CreditCardTypeChecker.GOLD_THRESHOLD, 601, 799 })
 	void givenGoldScore_whenGetCreditCardType_thenReturnGoldType(int score) {
-		assertThat(creditCardTypeChecker.getCreditCardType(score)).isEqualTo(CreditCardTypeEnum.GOLD);
+		assertThat(creditCardTypeChecker.getCreditCardType(score))
+			.isEqualTo(CreditCardTypeEnum.GOLD);
 	}
 
 	@ParameterizedTest
 	@ValueSource(ints = { CreditCardTypeChecker.PLATINUM_THRESHOLD, 801, 999, CreditCardTypeChecker.MAX_SCORE })
 	void givenPlatinumScore_whenGetCreditCardType_thenReturnPlatinumType(int score) {
-		assertThat(creditCardTypeChecker.getCreditCardType(score)).isEqualTo(CreditCardTypeEnum.PLATINUM);
+		assertThat(creditCardTypeChecker.getCreditCardType(score))
+			.isEqualTo(CreditCardTypeEnum.PLATINUM);
 	}
 
 }
