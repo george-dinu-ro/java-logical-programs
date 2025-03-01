@@ -1,4 +1,4 @@
-package digit.adder.multipleof3;
+package digit.adder.multipleof;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
