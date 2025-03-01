@@ -13,7 +13,7 @@ public class DigitAdderEvenAndOdd {
 				.sum();
 	}
 
-	private boolean hasType(int digit, DigitType type) {
+	private static boolean hasType(int digit, DigitType type) {
 		return (type == DigitType.EVEN) 
 				? (digit % 2 == 0) 
 				: (digit % 2 != 0);
