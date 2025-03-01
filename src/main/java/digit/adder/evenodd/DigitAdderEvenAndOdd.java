@@ -8,8 +8,8 @@ public class DigitAdderEvenAndOdd {
 
 	public int getDigitsSum(int num, DigitType type) {
 		return String.valueOf(num).chars()
-				.filter(digit -> hasType(digit, type))
 				.map(Character::getNumericValue)
+				.filter(digit -> hasType(digit, type))
 				.sum();
 	}
 
