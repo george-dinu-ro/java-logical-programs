@@ -1,4 +1,4 @@
-package digit;
+package digit.extractor;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -18,8 +18,7 @@ class DigitExtractorTest {
 	}
 
 	private static Stream<Arguments> provideNumbers() {
-		return Stream.of(
-				Arguments.of(new DivisionDigitExtractor(), 1, List.of(1)),
+		return Stream.of(Arguments.of(new DivisionDigitExtractor(), 1, List.of(1)),
 				Arguments.of(new StringBuilderDigitExtractor(), 1, List.of(1)),
 				Arguments.of(new DivisionDigitExtractor(), 11, List.of(1, 1)),
 				Arguments.of(new StringBuilderDigitExtractor(), 11, List.of(1, 1)),

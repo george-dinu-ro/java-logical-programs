@@ -1,4 +1,4 @@
-package digit;
+package digit.extractor;
 
 import java.util.ArrayList;
 import java.util.List;
