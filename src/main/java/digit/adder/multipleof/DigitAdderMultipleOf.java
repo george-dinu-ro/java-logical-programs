@@ -1,4 +1,4 @@
-package digit.adder.multipleof3;
+package digit.adder.multipleof;
 
 public class DigitAdderMultipleOf {
 
