@@ -1,6 +1,10 @@
 package evenodd;
 
-public class EvenAndOdd {
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
+@NoArgsConstructor(access = AccessLevel.NONE)
+public class EvenAndOddChecker {
 
 	public static final String NUMBER_MUST_BE_GREATER_THAN_0 = "Number must be greater than 0";
 
